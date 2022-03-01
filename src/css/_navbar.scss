@@ -1,0 +1,171 @@
+.navbar {
+  position: fixed;
+  padding: 5vh 5vw;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100vw;
+  @include center(center, space-between);
+  z-index: 4;
+  transition: 0.5s;
+  &_logo {
+    @include center;
+    a {
+      transition: 0.5s;
+      @include center;
+      h2 {
+        font-weight: 500;
+      }
+      svg {
+        height: 40px;
+      }
+    }
+  }
+  ul {
+    @include center;
+    gap: 20px;
+    transition: 0.5s;
+    li {
+      a {
+        position: relative;
+        padding: 10px;
+        color: #555;
+        font-weight: 500;
+        transition: 0.5s;
+        &::before {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          width: 0;
+          background: var(--cl);
+          transition: 0.5s;
+        }
+        &.router-link-exact-active,
+        &:hover {
+          color: var(--cl);
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+      button {
+        position: relative;
+        padding: 10px;
+        height: 40px;
+        width: 40px;
+        @include center;
+        color: #fff;
+        font-size: 1.25em;
+        font-weight: 500;
+        background: var(--cl);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          background: var(--gray-8);
+        }
+        span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translate(50%, -25%);
+          height: 22px;
+          width: 22px;
+          border-radius: 50%;
+          color: #555;
+          font-size: 16px;
+          background: var(--gray-3);
+          @include center;
+        }
+      }
+    }
+  }
+
+  .close,
+  .menu {
+    display: none;
+  }
+}
+.navbar.active {
+  padding: 30px 5vw;
+  background: var(--gray-1);
+}
+
+@media screen and (max-width: 999px) {
+  .navbar {
+    padding: 10px 5vw;
+    height: 50px;
+    &_logo {
+      @include center;
+      a {
+        color: #fff;
+        svg {
+          height: 35px;
+          path {
+            stroke: var(--cl);
+          }
+        }
+      }
+    }
+    ul {
+      position: fixed;
+      padding: 20px 10px;
+      top: 0;
+      left: -220px;
+      min-height: 100vh;
+      width: 220px;
+      background: var(--gray-1);
+      @include center(flex-start, flex-start, column);
+      gap: 15px;
+      z-index: 4;
+      li {
+        a {
+          padding: 5px 10px;
+          &::before {
+            top: 0;
+            left: 0;
+            width: 2.5px;
+            height: 0;
+          }
+          &.router-link-exact-active,
+          &:hover {
+            &::before {
+              width: 2.5px;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    ul.nav {
+      left: 0;
+    }
+    .menu {
+      display: flex;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .close {
+      position: fixed;
+      top: 0;
+      right: -100vw;
+      min-height: 100vh;
+      width: calc(100vw - 220px);
+      display: flex;
+      cursor: pointer;
+      z-index: 4;
+    }
+    .close.nav {
+      right: 0;
+    }
+  }
+  .navbar.active {
+    a,
+    .menu {
+      color: #000 !important;
+    }
+  }
+}
