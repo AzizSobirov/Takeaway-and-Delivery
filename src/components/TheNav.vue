@@ -52,7 +52,7 @@
         <button class="far fa-shopping-cart"><span>0</span></button>
       </li>
     </ul>
-    <div class="menu" @click="openNav()">
+    <div class="bar" @click="openNav()">
       <h2 class="far fa-bars"></h2>
     </div>
     <div class="close" @click="openNav()"></div>
