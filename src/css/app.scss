@@ -273,13 +273,67 @@
       font-size: 50px;
       font-weight: 500;
       text-align: center;
-      mark{
-          color: #1b9097;
+      mark {
+        color: #1b9097;
       }
     }
     .btn {
       color: var(--cl);
       background: #fff;
+    }
+  }
+}
+
+.footer {
+  padding: 5vh 5vw;
+  gap: 50px;
+  background: url(../assets/footer.png) center/cover no-repeat;
+  @include center(center, center, column);
+  mark {
+    color: var(--cl);
+  }
+  .text {
+    @include center(flex-start, center, column);
+    svg {
+      height: 40px;
+    }
+  }
+  &_content {
+    width: 100%;
+    @include center(center, space-between);
+    ul {
+      @include center;
+      gap: 120px;
+      li {
+        gap: 5px;
+        @include center(center, center, column);
+        h3 {
+          font-size: 18px;
+        }
+        a{
+          color: var(--gray-8);
+        }
+      }
+    }
+  }
+  &_nav {
+    width: 100%;
+    @include center(center, space-between);
+    h4{
+      font-weight: 400;
+    }
+    span{
+      @include center;
+      gap: 20px;
+      h3{
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        color: var(--gray-8);
+        box-shadow: 0 0 0 2px var(--gray-7);
+        @include center;
+        cursor: pointer;
+      }
     }
   }
 }

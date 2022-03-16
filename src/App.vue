@@ -7,6 +7,7 @@
   <the-order></the-order>
   <the-call></the-call>
   <the-support></the-support>
+  <the-footer></the-footer>
 </template>
 <script>
 import TheNav from "./components/TheNav.vue";
@@ -17,6 +18,7 @@ import TheMenu from "./views/TheMenu.vue";
 import TheOrder from "./views/TheOrder.vue";
 import TheCall from "./views/TheCall.vue";
 import TheSupport from "./views/TheSupport.vue";
+import TheFooter from "./views/TheFooter.vue";
 import "./css/app.css";
 export default {
   components: {
@@ -27,7 +29,8 @@ export default {
     TheMenu,
     TheOrder, 
     TheCall,
-    TheSupport
+    TheSupport,
+    TheFooter
   },
 };
 </script>

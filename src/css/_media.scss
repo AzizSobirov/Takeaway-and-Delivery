@@ -87,6 +87,10 @@
         font-weight: 400;
         font-size: 2em;
       }
+      p{
+        color: var(--gray-8) !important;
+        font-weight: 400;
+      }
     }
     img {
       width: 70%;
@@ -164,14 +168,40 @@
       background: url(../assets/sec5-bg.png) top/cover no-repeat;
 
       h2 {
-        font-size: 2em;
+        font-size: 1.5em;
+        width: 80%;
       }
-      .btn{
+      .btn {
+        margin-top: 10px;
         color: #1b9097;
       }
     }
-    img{
+    img {
       display: none;
+    }
+  }
+
+  .footer {
+    &_content {
+      gap: 20px;
+      @include center(flex-start, center, column);
+      .text svg {
+        height: 35px;
+        path {
+          stroke: var(--cl);
+        }
+      }
+      ul {
+        gap: 20px;
+        @include center(flex-start, center, column);
+        li{
+          align-items: flex-start;
+        }
+      }
+    }
+    &_nav{
+      gap: 10px;
+      flex-direction: column;
     }
   }
 }
